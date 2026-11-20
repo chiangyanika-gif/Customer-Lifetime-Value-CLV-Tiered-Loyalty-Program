@@ -25,7 +25,7 @@ clv_table = df.groupby('CustomerID').agg(
 
 clv_table['Lifespan_Days'] = (clv_table['Last_Purchase'] - clv_table['First_Purchase']).dt.days
 
-# Historical CLV: total net revenue in the 12-month data window
+# Historical CLV: total gross revenue in the data window (cancelled purchases not deducted)
 clv_table['CLV'] = clv_table['Total_Revenue']
 
 # --- Tiering by percentile ---
